@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Bestie! ✨</title>
+    <!-- Modern Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <style>
+        /* ==========================================================================
+   Cozy & Magical Birthday Design System - Custom CSS Variables & Setup
+   ========================================================================== */
+
+:root {
+    /* Cotton-Candy Light Pink Theme (HSL Tailored) */
+    --hue-pink: 335;          /* Sweet Bubblegum Pink */
+    --hue-blush: 350;         /* Soft Blush Pink */
+    --hue-gold: 42;           /* Warm Celebratory Gold */
+    
+    --primary: hsl(var(--hue-pink), 100%, 66%);
+    --primary-glow: hsla(var(--hue-pink), 100%, 66%, 0.3);
+    --primary-dark: hsl(var(--hue-pink), 90%, 55%);
+    
+    --accent: hsl(var(--hue-blush), 100%, 70%);
+    --accent-glow: hsla(var(--hue-blush), 100%, 70%, 0.25);
+    
+    --gold: hsl(var(--hue-gold), 100%, 55%);
+    --gold-glow: hsla(var(--hue-gold), 100%, 55%, 0.4);
+    
+    --bg-dark: hsl(335, 100%, 97%);        /* Soft, sweet pastel pink canvas background */
+    --bg-light-purple: hsl(335, 100%, 93%); /* Warm blush cotton candy secondary */
+    
+    --text-light: #2d0a15;                /* Deep luxury velvet plum-chocolate for text readability */
+    --text-muted: #783e4f;                /* Soft warm rose-cocoa for descriptions */
+    
+    /* Glassmorphism Presets (White-Frosted Sweet Glass) */
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 120, 160, 0.2);
+    --glass-shine: rgba(255, 255, 255, 0.6);
+    --glass-blur: blur(20px);
+    
+    /* Fonts */
+    --font-heading: 'Outfit', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-cursive: 'Sacramento', cursive;
+    
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Base Document Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-heading);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==========================================================================
+   Ambient Backdrops, Floating Particles & Confetti Canvas
+   ========================================================================== */
+
+.bg-glow-1 {
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    top: -20vw;
+    left: -20vw;
+    background: radial-gradient(circle, hsla(var(--hue-pink), 90%, 65%, 0.15) 0%, transparent 70%);
+    z-index: -2;
+    pointer-events: none;
+    animation: drift 20s infinite alternate ease-in-out;
+}
+
+.bg-glow-2 {
+    position: absolute;
+    width: 70vw;
+    height: 70vw;
+    bottom: -20vw;
+    right: -20vw;
+    background: radial-gradient(circle, hsla(var(--hue-violet), 90%, 60%, 0.15) 0%, transparent 70%);
+    z-index: -2;
+    pointer-events: none;
+    animation: drift-reverse 25s infinite alternate ease-in-out;
+}
+
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.ambient-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    animation: twinkle infinite linear;
+}
+
+.heart-particle {
+    position: absolute;
+    color: var(--primary);
+    opacity: 0;
+    pointer-events: none;
+    font-size: 1.2rem;
+    animation: floatUp 6s infinite linear;
+}
+
+@keyframes drift {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(100px, 50px) scale(1.1); }
+}
+
+@keyframes drift-reverse {
+    0% { transform: translate(0, 0) scale(1.1); }
+    100% { transform: translate(-100px, -50px) scale(1); }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 0.8; transform: scale(1.2); }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(110vh) translateX(0) rotate(0deg) scale(0.5);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-10vh) translateX(50px) rotate(360deg) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* ==========================================================================
+   Premium UI Glassmorphism & Reusable Components
+   ========================================================================== */
+
+.glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-radius: 24px;
+    box-shadow: 
+        0 8px 32px 0 rgba(10, 5, 25, 0.4),
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+    box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 25px var(--primary-glow);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.btn-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-glow::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 30%;
+    height: 200%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: rotate(30deg);
+    animation: shine 4s infinite linear;
+}
+
+@keyframes shine {
+    0% { left: -60%; }
+    15% { left: 130%; }
+    100% { left: 130%; }
+}
+
+/* ==========================================================================
+   Page Transitions & Views Container
+   ========================================================================== */
+
+.page {
+    display: none;
+    opacity: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 20px;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(30px) scale(0.98);
+}
+
+.page.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   PAGE 1: PASSCODE LOCKSCREEN SCREEN
+   ========================================================================== */
+
+.lockscreen-card {
+    max-width: 420px;
+    width: 100%;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    border-radius: 32px;
+}
+
+.lock-header {
+    margin-bottom: 30px;
+}
+
+.lock-icon-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+    animation: pulseLock 2.5s infinite;
+}
+
+.lock-icon {
+    width: 28px;
+    height: 28px;
+    transition: var(--transition-smooth);
+}
+
+@keyframes pulseLock {
+    0%, 100% { box-shadow: 0 0 15px var(--accent-glow); transform: scale(1); }
+    50% { box-shadow: 0 0 25px var(--accent-glow); transform: scale(1.05); }
+}
+
+.birthday-teaser {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.lock-hint {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* Passcode Indicator Dots */
+.passcode-dots {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 40px;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--text-muted);
+    transition: all 0.2s ease;
+    box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+}
+
+.dot.active {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 12px var(--primary-glow);
+    transform: scale(1.2);
+}
+
+/* Shake and Error Keyframes */
+.shake {
+    animation: shakeCard 0.45s ease-in-out;
+}
+
+.dot.error {
+    background-color: #ff6b6b;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 12px rgba(255, 107, 107, 0.6);
+}
+
+@keyframes shakeCard {
+    0%, 100% { transform: translateX(0); }
+    15%, 45%, 75% { transform: translateX(-8px); }
+    30%, 60%, 90% { transform: translateX(8px); }
+}
+
+/* Pin Keypad style */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    justify-items: center;
+    max-width: 290px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.key-btn {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-light);
+    font-size: 1.6rem;
+    font-family: var(--font-heading);
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.key-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.key-btn:active {
+    transform: scale(0.9);
+    background: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.action-btn {
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.backspace-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.clue-tip {
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    opacity: 0.65;
+    transition: opacity 0.3s;
+}
+
+.clue-tip:hover {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   PAGE 2: THE GIFTS DASHBOARD
+   ========================================================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.dashboard-header {
+    margin-bottom: 50px;
+}
+
+.title-main {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary);
+    background: none;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.gift-card {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 28px;
+    position: relative;
+    transition: var(--transition-bounce);
+    overflow: hidden;
+}
+
+.gift-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 15px 40px rgba(var(--hue-pink), 0.15);
+}
+
+.gift-badge {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--primary);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.gift-title {
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+.gift-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.btn-open-gift {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-light);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+}
+
+.gift-card:hover .btn-open-gift {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-color: transparent;
+    box-shadow: 0 5px 15px var(--primary-glow);
+}
+
+/* Interactive SVG/CSS Gift Box */
+.gift-box-wrapper {
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.gift-box {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+}
+
+.gift-body {
+    width: 100px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+.gift-lid {
+    width: 110px;
+    height: 25px;
+    background: var(--primary);
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: -5px;
+    z-index: 2;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: var(--transition-bounce);
+}
+
+.ribbon-horizontal {
+    width: 100px;
+    height: 15px;
+    background: var(--gold);
+    position: absolute;
+    top: 32px;
+    left: 0;
+}
+
+.ribbon-vertical {
+    width: 15px;
+    height: 80px;
+    background: var(--gold);
+    position: absolute;
+    top: 0;
+    left: 42px;
+}
+
+.bow {
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    z-index: 3;
+    transition: var(--transition-bounce);
+}
+
+.bow::before, .bow::after {
+    content: '';
+    width: 25px;
+    height: 20px;
+    background: var(--gold);
+    border-radius: 50% 50% 0 50%;
+    position: absolute;
+    transform: rotate(-45deg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.bow::after {
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(45deg);
+    left: 15px;
+}
+
+/* Unopened Hover & Opened State Styling */
+.gift-card:hover .gift-box {
+    animation: dance 1s infinite alternate ease-in-out;
+}
+
+.gift-card:hover .gift-lid {
+    transform: translateY(-8px) rotate(-3deg);
+}
+
+.gift-card:hover .bow {
+    transform: translateY(-6px);
+}
+
+@keyframes dance {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(-3deg); }
+    100% { transform: translateY(0) rotate(3deg); }
+}
+
+.gift-card.opened .gift-lid {
+    transform: translateY(-40px) rotate(-15deg) scale(0.9);
+    opacity: 0;
+}
+
+.gift-card.opened .bow {
+    transform: translateY(-50px) scale(0.9);
+    opacity: 0;
+}
+
+.gift-card.opened .btn-open-gift {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    cursor: default;
+}
+
+/* Page footer button */
+.page-footer {
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   MODALS: OVERLAY & WRAPPERS
+   ========================================================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 5, 20, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-card {
+    position: relative;
+    max-width: 650px;
+    width: 100%;
+    padding: 50px 40px;
+    transform: scale(0.9) translateY(20px);
+    transition: var(--transition-bounce);
+    opacity: 0;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-overlay.active .modal-card {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2.2rem;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.modal-close:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.modal-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.modal-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    /* inherits heading font */
+}
+
+/* ==========================================================================
+   GIFT 1: HEARTFELT LETTER MODAL
+   ========================================================================== */
+
+.letter-card {
+    background: radial-gradient(circle at top left, #fffcf4 0%, #f6f0dd 100%) !important;
+    color: #3b2a20 !important;
+    border: none !important;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.5) !important;
+    border-radius: 12px !important;
+    padding: 50px 40px !important;
+}
+
+.letter-card .modal-close {
+    color: rgba(59, 42, 32, 0.6);
+}
+
+.letter-card .modal-close:hover {
+    color: #3b2a20;
+    background: rgba(0,0,0,0.05);
+}
+
+.letter-container {
+    font-family: var(--font-serif);
+}
+
+.letter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed rgba(59, 42, 32, 0.2);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.wax-seal {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+    animation: wiggle 3s infinite alternate ease-in-out;
+}
+
+.letter-date {
+    font-size: 1rem;
+    font-weight: 600;
+    font-style: italic;
+    color: rgba(59, 42, 32, 0.7);
+}
+
+.letter-body {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.salutation {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.letter-body p {
+    margin-bottom: 20px;
+    text-indent: 20px;
+}
+
+.valediction {
+    margin-top: 30px;
+    text-indent: 0 !important;
+    font-style: italic;
+    margin-bottom: 5px !important;
+}
+
+.signature {
+    text-indent: 0 !important;
+    font-family: var(--font-cursive);
+    font-size: 2.8rem;
+    line-height: 1;
+    color: var(--primary-dark);
+    margin-top: 5px;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+/* ==========================================================================
+   GIFT 2: MAGIC HOLOGRAPHIC STICKER
+   ========================================================================== */
+
+.sticker-presenter {
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.holographic-sticker-base {
+    width: 170px;
+    height: 170px;
+    position: relative;
+    cursor: grab;
+    user-select: none;
+    transition: filter 0.3s;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+}
+
+.holographic-sticker-base:active {
+    cursor: grabbing;
+}
+
+.sticker-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.shimmer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0) 35%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255,255,255,0) 65%,
+        rgba(255,255,255,0) 100%
+    );
+    background-size: 250% 250%;
+    background-position: 0% 0%;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    animation: autoShimmer 5s infinite linear;
+}
+
+@keyframes autoShimmer {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 200%; }
+}
+
+.sticker-tip {
+    background: rgba(255,255,255,0.05);
+    padding: 10px 15px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.tip-text {
+    font-size: 0.85rem;
+    color: var(--accent);
+}
+
+/* Placed Dragged Sticker Style (Floating Overlay) */
+.placed-sticker {
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    z-index: 9999;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    will-change: transform;
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.35));
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.placed-sticker:active {
+    cursor: grabbing;
+    filter: drop-shadow(0 12px 24px rgba(0,0,0,0.45));
+}
+
+.placed-sticker .sticker-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.placed-sticker .sticker-glow {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.placed-sticker:hover .sticker-glow {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   GIFT 3: INTERACTIVE CAKE MODAL
+   ========================================================================== */
+
+.cake-container {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.birthday-cake {
+    width: 100%;
+    height: 100%;
+    max-height: 280px;
+}
+
+/* Candles & Blowing out mechanism styling */
+.candle {
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.candle:hover {
+    filter: brightness(1.2);
+}
+
+.flame {
+    animation: flickerFlame 1.2s infinite alternate ease-in-out;
+    transform-origin: 50% 82px;
+}
+
+.flame-inner {
+    animation: flickerFlame 0.8s infinite alternate ease-in-out;
+    transform-origin: 50% 82px;
+}
+
+@keyframes flickerFlame {
+    0% { transform: scale(1) rotate(-1deg); filter: brightness(1.0); }
+    50% { transform: scale(1.05) rotate(1deg); filter: brightness(1.1); }
+    100% { transform: scale(0.95) rotate(-2deg); filter: brightness(0.9); }
+}
+
+/* When a candle is blown out */
+.candle.blown .flame,
+.candle.blown .flame-inner {
+    display: none;
+}
+
+.candle.blown {
+    opacity: 0.7;
+    filter: grayscale(0.5);
+    cursor: default;
+}
+
+.wish-success-message {
+    margin-top: 25px;
+    background: rgba(var(--hue-pink), 0.1);
+    border: 1px solid rgba(var(--hue-pink), 0.2);
+    padding: 15px 25px;
+    border-radius: 16px;
+    animation: slideUpFade 0.6s var(--transition-bounce) forwards;
+}
+
+.sparkle-text {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+@keyframes slideUpFade {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   COZY BACKGROUND MUSIC BOX WIDGET
+   ========================================================================== */
+
+.music-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: slideInLeft 0.5s var(--transition-bounce) forwards;
+}
+
+.music-widget.hidden {
+    display: none !important;
+}
+
+.music-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.music-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--primary);
+}
+
+.spinning {
+    animation: rotate 8s infinite linear;
+}
+
+.spinning.paused {
+    animation-play-state: paused;
+}
+
+.track-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.music-toggle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.music-toggle svg {
+    width: 14px;
+    height: 14px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes slideInLeft {
+    0% { opacity: 0; transform: translateY(50px) scale(0.9); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ==========================================================================
+   PAGE 3: POLAROID PHOTO GALLERY SCREEN
+   ========================================================================== */
+
+.gallery-header {
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.btn-back {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition-smooth);
+}
+
+.btn-back:hover {
+    color: #fff;
+    transform: translateX(-4px);
+}
+
+.arrow-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.gallery-title {
+    margin-bottom: 12px;
+}
+
+/* Polaroid Masonry Wall Layout */
+.polaroid-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding-bottom: 80px;
+}
+
+.polaroid-card {
+    background: #ffffff;
+    padding: 16px 16px 32px 16px;
+    width: 270px;
+    border-radius: 2px;
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.25),
+        0 3px 10px rgba(0,0,0,0.15);
+    transform: rotate(var(--rotation, 0deg));
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    backface-visibility: hidden;
+}
+
+.polaroid-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.05); /* organic paper shadow */
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+.polaroid-card:hover {
+    transform: scale(1.06) rotate(0deg) translateY(-10px);
+    box-shadow: 
+        0 25px 45px rgba(0,0,0,0.35),
+        0 5px 15px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.polaroid-img-frame {
+    width: 100%;
+    height: 238px;
+    background-color: #eee;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+.polaroid-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--transition-smooth);
+}
+
+.polaroid-card:hover .polaroid-img {
+    transform: scale(1.03);
+}
+
+.polaroid-caption {
+    font-family: var(--font-cursive);
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #2b2b2b;
+    text-align: center;
+    padding-top: 18px;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Polaroid Local Uploader Card styling */
+.uploader-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    cursor: pointer;
+    min-height: 312px;
+}
+
+.uploader-card::after {
+    display: none;
+}
+
+.uploader-card:hover {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.uploader-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.file-input {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.uploader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.upload-icon {
+    width: 44px;
+    height: 44px;
+    color: var(--primary);
+    opacity: 0.8;
+    transition: var(--transition-bounce);
+}
+
+.uploader-card:hover .upload-icon {
+    transform: scale(1.15) translateY(-3px);
+    color: var(--primary);
+    opacity: 1;
+}
+
+.upload-subtext {
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+/* ==========================================================================
+   LIGHTBOX FULLSCREEN VIEWER FOR POLAROIDS
+   ========================================================================== */
+
+.lightbox-wrapper {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.expanded-polaroid {
+    width: 100%;
+    max-width: 420px;
+    padding: 24px 24px 44px 24px;
+    cursor: default;
+    background: #ffffff;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+    animation: zoomUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.expanded-frame {
+    height: 380px;
+}
+
+.expanded-caption {
+    font-size: 2.3rem;
+    padding-top: 24px;
+}
+
+.lightbox-close {
+    color: #fff;
+    background: rgba(0,0,0,0.4);
+    top: -60px;
+    right: 0px;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+@keyframes zoomUp {
+    0% { transform: scale(0.7) translateY(40px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* ==========================================================================
+   CUSTOM LIGHTBOX CAPTION PROMPT OVERLAY
+   ========================================================================== */
+
+.custom-prompt {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    z-index: 10000;
+    max-width: 400px;
+    width: calc(100% - 40px);
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-bounce);
+}
+
+.custom-prompt.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.prompt-content h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.prompt-content input {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--glass-border);
+    padding: 12px 16px;
+    border-radius: 10px;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    outline: none;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.prompt-content input:focus {
+    border-color: var(--primary);
+    background: rgba(255,255,255,0.1);
+}
+
+.prompt-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.prompt-buttons button {
+    flex: 1;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT & DEVICE OPTIMIZATIONS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .title-main {
+        font-size: 2.2rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    .btn-back {
+        position: static;
+        margin-bottom: 20px;
+        justify-content: center;
+        width: 100%;
+    }
+    .gallery-header {
+        margin-bottom: 30px;
+    }
+    .gifts-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .gift-card {
+        padding: 30px 20px;
+    }
+    .modal-card {
+        padding: 30px 20px;
+    }
+    .letter-card {
+        padding: 30px 20px !important;
+    }
+    .letter-body {
+        font-size: 1rem;
+    }
+    .signature {
+        font-size: 2.2rem;
+    }
+    .expanded-frame {
+        height: 280px;
+    }
+    .expanded-caption {
+        font-size: 1.8rem;
+    }
+    .music-widget {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        justify-content: space-between;
+    }
+}
+@media (max-width: 480px) {
+    /* Reduce title sizes */
+    .title-main {
+        font-size: 1.8rem;
+    }
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    .gallery-title {
+        font-size: 1.5rem;
+    }
+    /* Adjust key buttons */
+    .key-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1.4rem;
+    }
+    /* Reduce gift card padding */
+    .gift-card {
+        padding: 20px 15px;
+    }
+    .gift-title {
+        font-size: 1.5rem;
+    }
+    .gift-desc {
+        font-size: 0.85rem;
+    }
+    .btn-open-gift {
+        padding: 10px 15px;
+    }
+    /* Modal width */
+    .modal-card {
+        max-width: 90%;
+        padding: 30px 15px;
+    }
+    /* Polaroid cards */
+    .polaroid-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    .polaroid-img-frame {
+        height: 200px;
+    }
+    /* Reduce overall page padding */
+    .page {
+        padding: 20px 10px;
+    }
+}
+
+     </style>
+</head>
+
+<body>
+    <!-- Background Magical Gradients & Canvas for Confetti -->
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+    <div class="ambient-stars" id="ambient-stars"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- HOLOGRAPHIC STICKER CANVAS / OVERLAY (Peels from Gift 2 and stays on screen) -->
+    <div id="active-sticker-container" class="active-sticker-container"></div>
+
+    <!-- ================= PAGE 1: PASSCODE LOCKSCREEN ================= -->
+    <section id="page-lockscreen" class="page active">
+        <div class="lockscreen-card glass">
+            <div class="lock-header">
+                <div class="lock-icon-wrapper">
+                    <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </div>
+                <h1 class="birthday-teaser">A Magical Surprise Awaits...</h1>
+                <p class="lock-hint">Enter your secret passcode to unlock your gift</p>
+            </div>
+
+            <!-- Dot Indicators -->
+            <div class="passcode-dots" id="passcode-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <!-- Keypad Grid -->
+            <div class="keypad">
+                <button class="key-btn" data-value="1">1</button>
+                <button class="key-btn" data-value="2">2</button>
+                <button class="key-btn" data-value="3">3</button>
+                <button class="key-btn" data-value="4">4</button>
+                <button class="key-btn" data-value="5">5</button>
+                <button class="key-btn" data-value="6">6</button>
+                <button class="key-btn" data-value="7">7</button>
+                <button class="key-btn" data-value="8">8</button>
+                <button class="key-btn" data-value="9">9</button>
+                <button class="key-btn action-btn" data-action="clear" aria-label="Clear">C</button>
+                <button class="key-btn" data-value="0">0</button>
+                <button class="key-btn action-btn" data-action="back" aria-label="Backspace">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="backspace-icon">
+                        <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0 -2-2z"></path>
+                        <line x1="18" y1="9" x2="12" y2="15"></line>
+                        <line x1="12" y1="9" x2="18" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="clue-tip">
+                <span>Hint nai dav jaate gott</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PAGE 2: INTERACTIVE GIFTS ================= -->
+    <section id="page-dashboard" class="page">
+        <div class="container">
+            <header class="dashboard-header text-center">
+                <h1 class="title-main">Happy Birthday, My Bestie! ✨</h1>
+                <p class="subtitle">I have prepared three magical gifts just for you. Open them one by one!</p>
+            </header>
+
+            <div class="gifts-grid">
+                <!-- Gift 1: The Wishing Letter -->
+                <div class="gift-card glass" id="gift-card-1">
+                    <div class="gift-box-wrapper">
+                        <div class="gift-box text-center" id="gift-1-box">
+                            <div class="gift-lid"></div>
+                            <div class="gift-body">
+                                <div class="ribbon-horizontal"></div>
+                                <div class="ribbon-vertical"></div>
+                                <div class="bow"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gift-info text-center">
+                        <span class="gift-badge">Gift 01</span>
+                        <h2 class="gift-title">A Heartfelt Wish</h2>
+                        <p class="gift-desc">A little letter expressing how much you mean to me.</p>
+                        <button class="btn-open-gift" id="btn-gift-1">Unwrap Gift</button>
+                    </div>
+                </div>
+
+                <!-- Gift 2: Holographic Sticker -->
+                <div class="gift-card glass" id="gift-card-2">
+                    <div class="gift-box-wrapper">
+                        <div class="gift-box text-center" id="gift-2-box">
+                            <div class="gift-lid"></div>
+                            <div class="gift-body">
+                                <div class="ribbon-horizontal"></div>
+                                <div class="ribbon-vertical"></div>
+                                <div class="bow"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gift-info text-center">
+                        <span class="gift-badge">Gift 02</span>
+                        <h2 class="gift-title">Magic Sticker</h2>
+                        <p class="gift-desc">Peel this glowing sticker and place it anywhere you'd like!</p>
+                        <button class="btn-open-gift" id="btn-gift-2">Unwrap Gift</button>
+                    </div>
+                </div>
+
+                <!-- Gift 3: Interactive Birthday Cake -->
+                <div class="gift-card glass" id="gift-card-3">
+                    <div class="gift-box-wrapper">
+                        <div class="gift-box text-center" id="gift-3-box">
+                            <div class="gift-lid"></div>
+                            <div class="gift-body">
+                                <div class="ribbon-horizontal"></div>
+                                <div class="ribbon-vertical"></div>
+                                <div class="bow"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gift-info text-center">
+                        <span class="gift-badge">Gift 03</span>
+                        <h2 class="gift-title">Sweet Celebration</h2>
+                        <p class="gift-desc">Make a secret wish and blow out the birthday candles!</p>
+                        <button class="btn-open-gift" id="btn-gift-3">Unwrap Gift</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <!-- Page Transition Button -->
+            <div class="page-footer text-center">
+                <button class="btn-primary btn-glow" id="btn-go-to-gallery">
+                    Step Into Our Memory Lane ✨
+                </button>
+            </div>
+        </div>
+
+        <!-- ================= MODALS FOR GIFTS ================= -->
+
+        <div class="modal-overlay" id="modal-letter">
+            <div class="modal-card letter-card glass">
+                <button class="modal-close" aria-label="Close">&times;</button>
+                <div class="letter-container">
+                    <div class="letter-header">
+                        <div class="wax-seal">❤️</div>
+                        <h3 class="letter-date" id="live-date">june 14, 2026</h3>
+                    </div>
+                    <div class="letter-body">
+                        <p class="salutation">Dearest Bestie,</p>
+                        <p>
+                            Happy Birthday to the most amazing, incredible, and truly irreplaceable person in my life
+                            Ritu the Great 🤭💛
+
+                            Aaje Riti nai kav tane 🤭 akhir aaj taro divas chhe
+
+                        </p>
+                        <p>
+
+                            Today is all about celebrating you: your radiant smile, your beautiful heart, and the
+                            countless ways you make life feel warmer, lighter, and happier just by being in it.
+                            We’ve shared so many laughs, secret jokes, endless talks, chaos, memories, and moments that
+                            I’ll honestly never forget. Through highs and lows, you stood by me in a phase of life where
+                            I genuinely needed someone… and I can never explain how grateful I am that you came into my
+                            life
+
+
+                            Apde maybe ek j var malya chhie, pan e divas pan mane perfectly yaad chhe 🥹
+                            Jaldi madvu chhe tane… (ha ha tu kais "na" ik 😭)
+                        </p>
+                        <p>
+                            Thank you for being you, mari bestest friend.
+                            I’ll always be grateful to have you in my life.
+
+                            On your special day, I truly wish you all the happiness, love, success, peace, and adventure
+                            your heart can hold. A new phase of your life is about to begin college life ✨
+                            Enjoy karje, bhanje, maja karjeee, new memories banavje, and become super successful. Pachhi
+                            Luxembourg, London badhey javanu chhe ne 😃😉
+
+                            And remember this, I just want you to be the happiest person… with me or without me, idc.
+                            Your happiness will always matter to me the most.
+                        </p>
+                        <p>
+                            Ik hu tane bav heran karto hov chhu 🥲
+                            So ena mate sorry. Aaj thi vachan lav chhu ke hu tane heran na karvani puri try karis…
+
+                            (Jarak jarak to hale ne 😭)
+
+                            Thank you for every laugh, every conversation, every moment, and for somehow always keeping
+                            me sane. Here’s to celebrating many, many more birthdays together and laughing at our own
+                            stupid jokes forever 🥳💛
+
+                        </p>
+                        <p>
+
+                            Again, the very happiest birthday Ritiii hehehe 🥹✨
+
+
+                        </p>
+
+                        <p>
+
+
+                        </p>
+                        <p class="valediction">With all my love and wishes,</p>
+                        <p class="signature"> — Your cute lil bestfriend 🤧,
+                            Sukketu Kargathara💖</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GIFT 2 MODAL: Sticker Presentation -->
+        <div class="modal-overlay" id="modal-sticker">
+            <div class="modal-card sticker-modal-card glass text-center">
+                <button class="modal-close" aria-label="Close">&times;</button>
+                <h3 class="modal-title">You Found a Magic Sticker! 🌟</h3>
+                <p class="modal-subtitle">Hold and drag the sticker below to peel it! You can place it anywhere on
+                    your
+                    screen as a badge of our friendship.</p>
+
+                <div class="sticker-presenter">
+                    <div class="holographic-sticker-base" id="source-sticker">
+                        <img src="assets/WhatsApp Image 2026-05-29 at 12.38.27 PM.jpeg"
+                            alt="Holographic Besties Sticker" class="sticker-image">
+                        <div class="shimmer"></div>
+                    </div>
+                </div>
+
+                <div class="sticker-tip">
+                    <p class="tip-text">kaisa laga mera majakkkkk
+                        ✨ Drag it to move, double-click to scale it up/down! ✨</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- GIFT 3 MODAL: Candle Cake -->
+        <div class="modal-overlay" id="modal-cake">
+            <div class="modal-card cake-modal-card glass text-center">
+                <button class="modal-close" aria-label="Close">&times;</button>
+                <h3 class="modal-title">Make a Birthday Wish! 🎂</h3>
+                <p class="modal-subtitle" id="cake-instruction">Click or tap each of the 4 candles to blow them out!
+                </p>
+
+                <!-- Interactive SVG Cake Container -->
+                <div class="cake-container">
+                    <svg class="birthday-cake" viewBox="0 0 300 300">
+                        <!-- Plate -->
+                        <ellipse cx="150" cy="250" rx="100" ry="15" fill="#e0aaff" opacity="0.6" stroke="#c77dff"
+                            stroke-width="2" />
+                        <ellipse cx="150" cy="250" rx="90" ry="10" fill="#ffffff" opacity="0.3" />
+
+                        <!-- Cake Body: Layer 1 (Bottom) -->
+                        <path d="M 65 240 L 65 190 Q 150 210 235 190 L 235 240 Q 150 260 65 240 Z" fill="#9d4edd" />
+                        <path d="M 65 190 Q 150 210 235 190 Q 150 175 65 190 Z" fill="#c77dff" />
+                        <!-- Cream Drips Layer 1 -->
+                        <path
+                            d="M 65 190 Q 80 205 95 190 Q 110 205 125 190 Q 140 210 150 190 Q 165 208 180 190 Q 195 205 210 190 Q 225 205 235 190 Q 150 175 65 190 Z"
+                            fill="#ffffff" opacity="0.9" />
+
+                        <!-- Cake Body: Layer 2 (Top) -->
+                        <path d="M 85 180 L 85 130 Q 150 148 215 130 L 215 180 Q 150 198 85 180 Z" fill="#e0aaff" />
+                        <path d="M 85 130 Q 150 148 215 130 Q 150 115 85 130 Z" fill="#f3c6f1" />
+                        <!-- Cream Drips Layer 2 -->
+                        <path
+                            d="M 85 130 Q 100 145 115 130 Q 130 145 145 130 Q 160 148 170 130 Q 185 145 200 130 Q 210 140 215 130 Q 150 115 85 130 Z"
+                            fill="#ffffff" opacity="0.9" />
+
+                        <!-- Decorative Sprinkles / Frosting details -->
+                        <circle cx="110" cy="165" r="4" fill="#ff9ebb" />
+                        <circle cx="150" cy="172" r="4" fill="#a9def9" />
+                        <circle cx="190" cy="165" r="4" fill="#e4c1f9" />
+
+                        <circle cx="120" cy="215" r="5" fill="#fcf6bd" />
+                        <circle cx="150" cy="225" r="5" fill="#d0f4de" />
+                        <circle cx="180" cy="215" r="5" fill="#ffac97" />
+
+                        <!-- Candle 1 (Far Left) -->
+                        <g class="candle" id="candle-1" data-blown="false">
+                            <rect x="105" y="90" width="8" height="40" rx="3" fill="#ff9ebb" />
+                            <rect x="105" y="90" width="8" height="8" rx="1" fill="#ff7096" />
+                            <line x1="109" y1="90" x2="109" y2="82" stroke="#4a4a4a" stroke-width="2" />
+                            <!-- Candle Flame -->
+                            <path class="flame" d="M 109 82 Q 103 72 109 60 Q 115 72 109 82 Z" fill="#ffb703" />
+                            <path class="flame-inner" d="M 109 82 Q 106 75 109 68 Q 112 75 109 82 Z" fill="#ff0000" />
+                        </g>
+
+                        <!-- Candle 2 (Middle Left) -->
+                        <g class="candle" id="candle-2" data-blown="false">
+                            <rect x="132" y="80" width="8" height="50" rx="3" fill="#a9def9" />
+                            <rect x="132" y="80" width="8" height="8" rx="1" fill="#70cbf9" />
+                            <line x1="136" y1="80" x2="136" y2="72" stroke="#4a4a4a" stroke-width="2" />
+                            <!-- Candle Flame -->
+                            <path class="flame" d="M 136 72 Q 130 62 136 50 Q 142 62 136 72 Z" fill="#ffb703" />
+                            <path class="flame-inner" d="M 136 72 Q 133 65 136 58 Q 139 65 136 72 Z" fill="#ff0000" />
+                        </g>
+
+                        <!-- Candle 3 (Middle Right) -->
+                        <g class="candle" id="candle-3" data-blown="false">
+                            <rect x="160" y="80" width="8" height="50" rx="3" fill="#e4c1f9" />
+                            <rect x="160" y="80" width="8" height="8" rx="1" fill="#cc99f9" />
+                            <line x1="164" y1="80" x2="164" y2="72" stroke="#4a4a4a" stroke-width="2" />
+                            <!-- Candle Flame -->
+                            <path class="flame" d="M 164 72 Q 158 62 164 50 Q 170 62 164 72 Z" fill="#ffb703" />
+                            <path class="flame-inner" d="M 164 72 Q 161 65 164 58 Q 167 65 164 72 Z" fill="#ff0000" />
+                        </g>
+
+                        <!-- Candle 4 (Far Right) -->
+                        <g class="candle" id="candle-4" data-blown="false">
+                            <rect x="187" y="90" width="8" height="40" rx="3" fill="#fcf6bd" />
+                            <rect x="187" y="90" width="8" height="8" rx="1" fill="#f9ea70" />
+                            <line x1="191" y1="90" x2="191" y2="82" stroke="#4a4a4a" stroke-width="2" />
+                            <!-- Candle Flame -->
+                            <path class="flame" d="M 191 82 Q 185 72 191 60 Q 197 72 191 82 Z" fill="#ffb703" />
+                            <path class="flame-inner" d="M 191 82 Q 188 75 191 68 Q 194 75 191 82 Z" fill="#ff0000" />
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="wish-success-message hidden" id="wish-success-message">
+                    <h4 class="sparkle-text">🌈 Sparkles & Magic! 🌈</h4>
+                    <p>May your wish fly high and come true! 🎵</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift 4 MODAL: VIRTUAL GIFTS -->
+    <div class="gift-card glass" id="gift-card-5">
+        <div class="gift-box-wrapper">
+            <div class="sticker-presenter">
+                <div class="holographic-sticker-base" id="source-sticker">
+                    <img src="assets/IMG-20260529-WA0006.png" alt="Holographic Besties Sticker" class="sticker-image">
+                    <div class="shimmer"></div>
+                </div>
+            </div>
+
+            <div class="sticker-presenter">
+                <div class="holographic-sticker-base" id="source-sticker">
+                    <img src="assets/IMG-20260529-WA0007.png" alt="Holographic Besties Sticker" class="sticker-image">
+                    <div class="shimmer"></div>
+                </div>
+            </div>
+
+            <div class="sticker-presenter">
+                <div class="holographic-sticker-base" id="source-sticker">
+                    <img src="assets/IMG-20260529-WA0005.png" alt="Holographic Besties Sticker" class="sticker-image">
+                    <div class="shimmer"></div>
+                </div>
+            </div>
+
+            <div class="sticker-presenter">
+                <div class="holographic-sticker-base" id="source-sticker">
+                    <img src="assets/WhatsApp Image 2026-05-29 at 1.10.23 PM.jpeg" alt="Holographic Besties Sticker"
+                        class="sticker-image">
+                    <div class="shimmer"></div>
+                </div>
+            </div>
+
+            <div class="gift-info text-center">
+                <span class="gift-badge">Gift 04</span>
+                <h2 class="gift-title">New Memories</h2>
+                <p class="gift-desc">More cherished moments to explore.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= PAGE 3: POLAROID PHOTO GALLERY ================= -->
+    <section id="page-gallery" class="page">
+        <div class="container">
+            <header class="gallery-header text-center">
+                <button class="btn-back" id="btn-back-to-dashboard">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="arrow-icon">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12,19 5,12 12,5"></polyline>
+                    </svg>
+                    Gifts Dashboard
+                </button>
+                <h1 class="title-main gallery-title">RITUS OF RITU (iykyk)</h1>
+                <p class="subtitle">hehehe</p>
+            </header>
+
+            <!-- The Polaroid Masonry Wall -->
+            <div class="polaroid-wall" id="polaroid-wall">
+                <!-- Polaroid 1 -->
+                <div class="polaroid-card" style="--rotation: -3deg;">
+                    <div class="polaroid-img-frame">
+                        <img src="assets/trashed-1782370402-IMG_20260114_130016_132.jpg" alt="Chasing Sunsets"
+                            class="polaroid-img">
+                    </div>
+                    <div class="polaroid-caption">The Great Ritu</div>
+                </div>
+
+                <!-- Polaroid 2 -->
+                <div class="polaroid-card" style="--rotation: 2deg;">
+                    <div class="polaroid-img-frame">
+                        <img src="assets/IMG_20260404_195646_100.jpg" alt="Endless Coffee Talks" class="polaroid-img">
+                    </div>
+                    <div class="polaroid-caption">self obsessed Ritu</div>
+                </div>
+
+                <!-- Polaroid 3 -->
+                <div class="polaroid-card" style="--rotation: -1.5deg;">
+                    <div class="polaroid-img-frame">
+                        <img src="assets/trashed-1782370405-IMG_20260522_180814_676.jpg"
+                            alt="To More Magical Celebrations" class="polaroid-img">
+                    </div>
+                    <div class="polaroid-caption">Ritu the real baddie</div>
+                </div>
+
+                <div class="polaroid-card" style="--rotation: -3deg;">
+                    <div class="polaroid-img-frame">
+                        <img src="assets/trashed-1782370405-Snapchat-1090650622.jpg" alt="Chasing Sunsets"
+                            class="polaroid-img">
+                    </div>
+                    <div class="polaroid-caption">The chasmish Ritu</div>
+                </div>
+
+                <div class="polaroid-card" style="--rotation: -3deg;">
+                    <div class="polaroid-img-frame">
+                        <img src="assets/trashed-1782370405-IMG_20260211_150315_390.jpg" alt="Chasing Sunsets"
+                            class="polaroid-img">
+                    </div>
+                    <div class="polaroid-caption">The joker Ritu</div>
+                </div>
+
+                <div class="polaroid-card" style="--rotation: -3deg;">
+                    <div class="polaroid-img-frame">
+                        <img src="assets/trashed-1782370405-IMG_20251001_063456_727.jpg" alt="Chasing Sunsets"
+                            class="polaroid-img">
+                    </div>
+                    <div class="polaroid-caption">Navratri lover Ritu</div>
+                </div>
+
+                <div class="polaroid-card" style="--rotation: -3deg;">
+                    <div class="polaroid-img-frame">
+                        <img src="assets/trashed-1782370404-IMG_20260525_113108_116.jpg" alt="Chasing Sunsets"
+                            class="polaroid-img">
+                    </div>
+                    <div class="polaroid-caption">Ritu baught new kurtiii</div>
+                </div>
+
+                <div class="polaroid-card" style="--rotation: -3deg;">
+                    <div class="polaroid-img-frame">
+                        <img src="assets/trashed-1782370403-IMG_20260410_173538_292.jpg" alt="Chasing Sunsets"
+                            class="polaroid-img">
+                    </div>
+                    <div class="polaroid-caption">PFP vadi Ritu</div>
+                </div>
+
+                <div class="polaroid-card" style="--rotation: -3deg;">
+                    <div class="polaroid-img-frame">
+                        <img src="assets/trashed-1782370401-IMG_20260323_231930_615.jpg" alt="Chasing Sunsets"
+                            class="polaroid-img">
+                    </div>
+                    <div class="polaroid-caption">farva gai Ritu</div>
+                </div>
+
+                <div class="polaroid-card" style="--rotation: -3deg;">
+                    <div class="polaroid-img-frame">
+                        <img src="assets/IMG_20260525_113058_742.jpg" alt="Chasing Sunsets" class="polaroid-img">
+                    </div>
+                    <div class="polaroid-caption">Ritu aur AI ka kamal</div>
+                </div>
+
+                <div class="polaroid-card" style="--rotation: -3deg;">
+                    <div class="polaroid-img-frame">
+                        <img src="assets/IMG_20260210_162640_629.jpg" alt="Chasing Sunsets" class="polaroid-img">
+                    </div>
+                    <div class="polaroid-caption">Ritu e hairs straight karayaaaa</div>
+                </div>
+
+                <div class="polaroid-card" style="--rotation: -3deg;">
+                    <div class="polaroid-img-frame">
+                        <img src="assets/Screenshot_20260528-225007~2.png" alt="Chasing Sunsets" class="polaroid-img">
+                    </div>
+                    <div class="polaroid-caption">Ritu in vrindavan</div>
+                </div>
+
+                <div class="polaroid-card" style="--rotation: -3deg;">
+                    <div class="polaroid-img-frame">
+                        <img src="assets/IMG_20250518_004211_120.jpg" alt="Chasing Sunsets" class="polaroid-img">
+                    </div>
+                    <div class="polaroid-caption">maker of this site hehehe</div>
+                </div>
+
+                <!-- Polaroid Uploader Box (Dynamic Photo Adder) -->
+                <div class="polaroid-card uploader-card" style="--rotation: 3deg;">
+                    <div class="uploader-box" id="uploader-box">
+                        <input type="file" id="file-input" accept="image/*" class="file-input">
+                        <div class="uploader-content">
+                            <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21,15 16,10 5,21"></polyline>
+                            </svg>
+                            <span>Add Our Memory</span>
+                            <span class="upload-subtext">Click or Drag & Drop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox Zoom Modal -->
+        <div class="modal-overlay" id="modal-lightbox">
+            <div class="lightbox-wrapper">
+                <button class="modal-close lightbox-close" aria-label="Close">&times;</button>
+                <div class="polaroid-card expanded-polaroid">
+                    <div class="polaroid-img-frame expanded-frame">
+                        <img src="" alt="" id="lightbox-img" class="polaroid-img">
+                    </div>
+                    <div class="polaroid-caption expanded-caption" id="lightbox-caption">Caption</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Prompt for Upload Caption -->
+    <div class="custom-prompt glass hidden" id="custom-prompt">
+        <div class="prompt-content">
+            <h3>Give your memory a name!</h3>
+            <input type="text" id="prompt-input" placeholder="e.g. A crazy night out... 🍕" maxlength="40">
+            <div class="prompt-buttons">
+                <button class="btn-primary" id="btn-prompt-submit">Save Memory</button>
+                <button class="btn-secondary" id="btn-prompt-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Web Audio & Particles JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
