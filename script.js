@@ -474,7 +474,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Add Holographic Shimmer image
         sticker.innerHTML = `
-            <img src="assets/sticker_holo.png" alt="Holo Sticker" class="sticker-img">
+            <img src="sticker_holo.png" alt="Holo Sticker" class="sticker-img">
             <div class="shimmer" style="animation-duration: ${Math.random() * 4 + 3}s"></div>
             <div class="sticker-glow"></div>
         `;
